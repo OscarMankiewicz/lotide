@@ -1,24 +1,4 @@
-let eqArrays = function(arr1, arr2) {
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      console.log(false);
-      return false;
-    }
-  }
-  console.log(true);
-  return true;
-};
-
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log("Arrays are equal.");
-    return;
-  } else {
-    console.log("Arrays are not equal.");
-  }
-};
-  
-const letterPositions = function(sentence) {
+ const letterPositions = function(sentence) {
   //object needs to show the letter and the letter location (zero-index)
   const results = {};
   // for loop or for of loop to loop through the string
@@ -36,4 +16,5 @@ const letterPositions = function(sentence) {
     
   return results;
 };
-assertArraysEqual(letterPositions("hello").e, [1]);
+
+module.exports = letterPositions;
