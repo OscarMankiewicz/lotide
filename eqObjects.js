@@ -1,23 +1,4 @@
-let eqArrays = function(arr1, arr2) {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        console.log(false)
-        return false;
-      }
-    }
-    console.log(true)
-    return true;
-}
-
-
-const assertEqual = function(actual, expected) {
-    if (actual === expected) {
-      console.log(`✅✅✅ ${actual} === ${expected}`);
-    } else {
-      console.log(`🛑🛑🛑 ${actual} !== ${expected}`);
-    }
-};
-
+const eqArrays = require('./eqArrays')
 
 const eqObjects = function(obj1, obj2) {
     //check the number of keys are equal
@@ -39,26 +20,4 @@ const eqObjects = function(obj1, obj2) {
     return true;
 };
 
-
-
-
-
-const multiColorShirtObject = { 
-    colors: ["red", "blue"], 
-    size: "medium" 
-};
-
-const anotherMultiColorShirtObject = { 
-    size: "medium", 
-    colors: ["red", "blue"] 
-};
-
-assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), true); // => true
-
-const longSleeveMultiColorShirtObject = { 
-    size: "medium", 
-    colors: ["red", "blue"], 
-    sleeveLength: "long" 
-};
-
-assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false); // => false
+module.exports = eqObjects;
